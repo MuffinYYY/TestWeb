@@ -64,3 +64,20 @@ and open the template in the editor.
   line-height: 100px;
   flex-shrink: 0;
 }
+@keyframes animation {
+  from {
+    letter-spacing: 16px;
+  }
+  to {
+    letter-spacing: 0;
+  }
+}
+
+.animated {
+  animation: animation 5s ease infinite;
+}
+
+h2 {
+  text-transform: uppercase;
+  white-space: nowrap;
+}
