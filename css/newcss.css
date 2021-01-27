@@ -53,7 +53,7 @@ and open the template in the editor.
   background-position: center;
   
   -webkit-background-clip: text;
-  color: transparent;  s
+  color: transparent;  ss
   
   width: 300px;
   height: 100px;
@@ -64,6 +64,7 @@ and open the template in the editor.
   line-height: 100px;
   flex-shrink: 0;
 }
+
 @keyframes animation {
   from {
     letter-spacing: 16px;
