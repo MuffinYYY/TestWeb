@@ -23,11 +23,11 @@ and open the template in the editor.
     color: #ffffff;
   }
   .bg-3 { 
-    background-color: #ffffff; /* White */
+    background-color: #FFE4B5; /* White */
     color: #555555;
   }
   .bg-4 { 
-    background-color: #2f2f2f; /* Black Gray */
+    background-color: 	#FF00FF; /* Black Gray */
     color: #fff;
   }
   .container-fluid {
