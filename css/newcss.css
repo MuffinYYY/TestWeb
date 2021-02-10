@@ -88,6 +88,7 @@ h2 {
     top: 0;
     width: 100%;
 }
-.sticky + .content {
-    padding-top: 60px;
+.sticky + #div1{
+    padding-top: 140px;
+    
 }
