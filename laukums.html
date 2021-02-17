@@ -6,26 +6,20 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Laukums</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         <button onclick="taisitLaukumu()">Pogu nospied</button>
-        <form id="forma"></form>
+        <form id="forma">
+            <h2>Ievadiet skaitli N</h2>
+            <br>
+            <input class="nskaitlis">
+        </form>
         <script>
             function taisitLaukumu(){
-                let i = document.getElementsByClassName("rinda").length;
-                let divs = document.createElement("DIV"); divs.setAttribute("class", "rinda");
-                divs.innerHTML=(i+1)+") ";
-                let ievads1 = document.createElement("INPUT"); ievads1.style="text-align: center";
-                let ievads2 = document.createElement("INPUT"); ievads2.style="text-align: center";
-                let poga = document.createElement("INPUT"); poga.value="novākt"; poga.type="button";
-                poga.onclick=()=>{
-                    poga.parentNode.remove();
-                }
-                divs.appendChild(ievads1); divs.appendChild(ievads2); divs.appendChild(poga);
-                document.getElementById("forma").appendChild(divs);
+                var x = document.getElementsByClassName("nskaitlis");
             }
         </script>
     </body>
