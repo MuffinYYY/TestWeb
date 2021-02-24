@@ -12,7 +12,6 @@ and open the template in the editor.
     </head>
     <body>
         <button onclick="taisitLaukumu()">Pogu nospied</button>
-        <button >Atpakal</button>
         <form id="forma">
             <h2>Ievadiet skaitli N</h2>
             <br>
@@ -26,12 +25,11 @@ and open the template in the editor.
                 var divs = document.createElement("div");
                 for (var j = 0; j < x; j++) {
                    var button = document.createElement("button");
-                   button.style="height:50px;width:50px";
+                   button.style="height:50px;width:50px;background-color: #474e5d";
                    button.innerHTML=i*x+j+1;
-                   divs.appendChild(button);t.appendChild(divs);
+                   divs.appendChild(button);t.appendChild(divs); document.body.appendChild(t);
                 }
             }
-            document.body.appendChild(t);
         }
         </script>
     </body>
