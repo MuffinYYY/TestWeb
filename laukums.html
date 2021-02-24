@@ -26,6 +26,7 @@ and open the template in the editor.
                 var divs = document.createElement("div");
                 for (var j = 0; j < x; j++) {
                    var button = document.createElement("button");
+                   button.style="height:50px;width:50px";
                    button.innerHTML=i*x+j+1;
                    divs.appendChild(button);t.appendChild(divs);
                 }
