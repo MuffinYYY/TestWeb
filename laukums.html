@@ -15,12 +15,22 @@ and open the template in the editor.
         <form id="forma">
             <h2>Ievadiet skaitli N</h2>
             <br>
-            <input class="nskaitlis">
+            <input type="number" id="nskaitlis">
         </form>
         <script>
-            function taisitLaukumu(){
-                var x = document.getElementsByClassName("nskaitlis");
+        function taisitLaukumu() {
+            var x = document.getElementById("nskaitlis").value;
+            var t = document.createElement("div");
+            for (var i = 0; i < x; i++) {
+                var divs = document.createElement("div");
+                for (var j = 0; j < x; j++) {
+                   var button = document.createElement("button");
+                   button.innerHTML=i*x+j+1;
+                   divs.appendChild(button);t.appendChild(divs);
+                }
             }
+            document.body.appendChild(t);
+        }
         </script>
     </body>
 </html>
