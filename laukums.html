@@ -19,19 +19,40 @@ and open the template in the editor.
         </form>
         <div id="divs1"></div>
         <script>
+        
+        let bin=["100","200","300","400","500","600","700","800"];
+        let dec=["100","200","300","400","500","600","700","800"];
+        let saraksts=[];
+        
+        function sajukums(){
+             for(let i=0;i<bin.length;i++){
+                saraksts.push(bin[i]);
+                saraksts.push(dec[i]);
+             }
+             for(let i=0;i<saraksts.length;i++){
+                var rand=Math.floor(Math.random()*saraksts.length);
+                var tmp=saraksts[rand];
+                saraksts[rand]=saraksts[i];
+                saraksts[i]=tmp;
+            }
+            document.write(saraksts);
+            console.log(rand)
+        }
+        sajukums();
+        
         function taisitLaukumu() {
-            var x = document.getElementById("nskaitlis").value;
+            let x = document.getElementById("nskaitlis").value;
             for (var i = 0; i < x; i++) {
                 var d = document.createElement("div");
                 document.getElementById("divs1").appendChild(d);
                 for (var j = 0; j < x; j++) {
                    var buttons = document.createElement("button");
                    buttons.style="height:50px;width:50px;background-color: #474e5d";
-                   buttons.innerHTML=i*x+j+1;
+                   buttons.innerHTML=saraksts[i*x+j+1];
                    document.getElementById("divs1").appendChild(buttons);
                 }
             }
         }
-        </script>
+        </script>  
     </body>
 </html>
