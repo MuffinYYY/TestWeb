@@ -11,6 +11,10 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
+        <button  onclick="maina();" style="width: 40px; height: 40px;display:block;">
+    <span id="pogab" style="visibility:visible;">AA</span>
+ </button>
+
         <button onclick="taisitLaukumu()">Pogu nospied</button>
         <form id="forma">
             <h2>Ievadiet skaitli N</h2>
@@ -24,6 +28,19 @@ and open the template in the editor.
         let dec=["100","200","300","400","500","600","700","800"];
         let saraksts=[];
         
+        
+       function maina(){
+    let stils1, stils2;
+    let tt=document.getElementById("pogab");
+    stils1=tt.style.visibility;
+    if (stils1=="visible")stils2="hidden"; else stils2="visible";
+    tt.style.visibility=stils2;
+    setTimeout(function(){tt.style.visibility=stils1;},2000);
+    
+}
+
+
+
         function sajukums(){
              for(let i=0;i<bin.length;i++){
                 saraksts.push(bin[i]);
@@ -48,11 +65,18 @@ and open the template in the editor.
                 for (var j = 0; j < x; j++) {
                    var buttons = document.createElement("button");
                    buttons.style="height:50px;width:50px;background-color: #474e5d";
-                   buttons.innerHTML=saraksts[i*x+j+1];
+                   buttons.innerHTML=saraksts[i*x+j];
                    document.getElementById("divs1").appendChild(buttons);
                 }
             }
         }
+                    
+        var laikask = document.createElement("p");
+        laikask.setAttribute("id", "laiks");
+        document.body.appendChild(laikask);
+        laikask.innerHTML = "0:00";
+        timecount = setInterval(timer,1000);
+        
         </script>  
     </body>
 </html>
