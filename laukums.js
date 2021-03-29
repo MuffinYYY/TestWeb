@@ -50,7 +50,10 @@ var n=0;
                 }
             }
             function taisitLaukumu(){        
-               n=document.getElementById("skaitlis").value;   
+               n=document.getElementById("skaitlis").value; 
+               if(n==3){
+                   alert("Ievadiet pāra skaitli");
+               }else if (n != 3){
                document.getElementById("divs1").innerHTML = '';
                sajukums();
                let jdivs=document.getElementById("divs1");
@@ -69,6 +72,7 @@ var n=0;
                }
                document.body.appendChild(jdivs);
                
+            }
             }
             function mainit(btn){
                 if (skaitit%2 == 0){
