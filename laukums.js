@@ -13,17 +13,17 @@ var n=0;
                 for(let i=0; i<bin.length; i++){
                     saraksts.push(bin[i]);
                     saraksts.push(dec[i])
-                    bin1[i]=i+1;
-                    dec1[i]=-i-1;
+                    bin1[i]=i;
+                    dec1[i]=-i;
                 }
                 for(let i=0;i<bin.length;i++){
                     let rand=Math.floor(Math.random()*bin.length);
                     let tmp=bin[rand];
                     bin[rand]=bin[i];
                     bin[i]=tmp;
-                    let tmph=bin1[rand];
+                    let tmp0=bin1[rand];
                     bin1[rand]=bin1[i];
-                    bin1[i]=tmph;
+                    bin1[i]=tmp0;
                     let tmp1=dec[rand];
                     dec[rand]=dec[i];
                     dec[i]=tmp1;
@@ -44,9 +44,9 @@ var n=0;
                     let tmp=saraksts[rand];
                     saraksts[rand]=saraksts[i];
                     saraksts[i]=tmp;
-                    let tmph=saraksts1[rand];
+                    let tmp0=saraksts1[rand];
                     saraksts1[rand]=saraksts1[i];
-                    saraksts1[i]=tmph;
+                    saraksts1[i]=tmp0;
                 }
             }
             function taisitLaukumu(){        
