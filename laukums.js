@@ -10,14 +10,11 @@ var skaitit=0;
 var klik=false;
 var n=0;
 var uzvara;
+//Uztaisa divus tuksus masivus, kuros ieliks atbilstosas vertibas
             function sajukums(){
-                for(let i=0; i<bin.length; i++){
-                    saraksts.push(bin[i]);
-                    saraksts.push(dec[i])
+                for(let i=0;i<bin.length;i++){
                     bin1[i]=i;
                     dec1[i]=-i;
-                }
-                for(let i=0;i<bin.length;i++){
                     let rand=Math.floor(Math.random()*bin.length);
                     let tmp=bin[rand];
                     bin[rand]=bin[i];
@@ -93,8 +90,6 @@ var uzvara;
                         klik=true;
                         document.getElementById(id1).className="visible";
                         document.getElementById(id2).className="visible";
-                       
-                        
                     }
                 }
             }
