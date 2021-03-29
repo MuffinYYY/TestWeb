@@ -51,7 +51,7 @@ var n=0;
             }
             function taisitLaukumu(){        
                n=document.getElementById("skaitlis").value; 
-               if(n==3){
+               if(n==3 || n==1){
                    alert("Ievadiet pāra skaitli");
                }else if (n != 3){
                document.getElementById("divs1").innerHTML = '';
