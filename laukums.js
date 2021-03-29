@@ -9,6 +9,7 @@ var id2;
 var skaitit=0;
 var klik=false;
 var n=0;
+var uzvara;
             function sajukums(){
                 for(let i=0; i<bin.length; i++){
                     saraksts.push(bin[i]);
@@ -70,8 +71,7 @@ var n=0;
                    }
                    jdivs.appendChild(d);
                }
-               document.body.appendChild(jdivs);
-               
+               document.body.appendChild(jdivs);     
             }
             }
             function mainit(btn){
@@ -93,12 +93,8 @@ var n=0;
                         klik=true;
                         document.getElementById(id1).className="visible";
                         document.getElementById(id2).className="visible";
-                        beigt=beigt+2;  
+                       
                         
                     }
                 }
-                let jdivs=document.getElementById("divs1");
-                        let uzvara = createElement("p");
-                        uzvara.innerHTML="Uzvara!";
-                        jdivs.appendsChild(uzvara);
             }
