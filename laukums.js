@@ -1,6 +1,6 @@
 var bin1=[];
-var bin=["100", "200","300", "400","500", "600","700", "800"]; 
-var dec=["100", "200","300", "400","500", "600","700", "800"];
+var bin=["100", "200","300", "400","500", "600","700", "800", "900","1000","1100","1200","1300","1400","1500","1600","1700", "1800","1900","2000"]; 
+var dec=["100", "200","300", "400","500", "600","700", "800","900","1000","1100","1200","1300","1400","1500","1600","1700", "1800","1900","2000"];
 var dec1=[];
 var saraksts=[];
 var saraksts1=[];
@@ -93,7 +93,12 @@ var n=0;
                         klik=true;
                         document.getElementById(id1).className="visible";
                         document.getElementById(id2).className="visible";
-                        beigt=beigt+2;     
+                        beigt=beigt+2;  
+                        
                     }
                 }
+                let jdivs=document.getElementById("divs1");
+                        let uzvara = createElement("p");
+                        uzvara.innerHTML="Uzvara!";
+                        jdivs.appendsChild(uzvara);
             }
