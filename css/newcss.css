@@ -106,6 +106,7 @@ h2 {
     font-size: 13px;
     vertical-align: middle;
     background-color: #474e5d;
+    pointer-events: none;
 }
 .hidden {
     width: 90px;
