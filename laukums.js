@@ -1,46 +1,38 @@
+var bin=[];
 var bin1=[];
-var bin=["100", "200","300", "400","500", "600","700", "800", "900","1000","1100","1200","1300","1400","1500","1600","1700", "1800","1900","2000","2100","2200","2300","2400","2500","2600","2700","2800","2900","3000"]; 
-var dec=["100", "200","300", "400","500", "600","700", "800","900","1000","1100","1200","1300","1400","1500","1600","1700", "1800","1900","2000","2100","2200","2300","2400","2500","2600","2700","2800","2900","3000"];
+var dec=[];
 var dec1=[];
 var saraksts=[];
-var saraksts1=[];
-var id1;
+var sarakstsh=[];
 var id2;
+var id1;
 var skaitit=0;
-var klik=false;
+var klik;
+var beigt=0;
 var n=0;
-var uzvara;
-var minutesLabel = document.getElementById("minutes");
-var secondsLabel = document.getElementById("seconds");
 var totalSeconds = 0;
-setInterval(setTime, 1000);
+var atskaite=setInterval(setTime, 1000);;
+var radis;
 
 function setTime() {
-  ++totalSeconds;
-  secondsLabel.innerHTML = pad(totalSeconds % 60);
-  minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
-}
-
-function pad(val) {
-  var valString = val + "";
-  if (valString.length < 2) {
-    return "0" + valString;
-  } else {
-    return valString;
-  }
-}
-//Uztaisa divus tuksus masivus, kuros ieliks atbilstosas vertibas
+        totalSeconds ++;
+    }
             function sajukums(){
+                clearInterval(atskaite);
+                for(let i=0; i<16; i++){
+                    bin1[i]=i+1;
+                    dec1[i]=-i-1;
+                }
+                bin=["100", "200","300", "400","500", "600","700", "800", "900","1000","1100","1200","1300","1400","1500","1600"];
+                dec=["lg(x)=2", "400:2","100+200", "20<sup>2</sup>","&#8730 250000", "0.5x=300","100*7", "1000-200","30<sup>2</sup>","20<sup>2</sup> * &#8730 100","3300:3","40*30","(x:10)=130","1399+1","&#8730 2250000","x+100=1700"];
                 for(let i=0;i<bin.length;i++){
-                    bin1[i]=i;
-                    dec1[i]=-i;
                     let rand=Math.floor(Math.random()*bin.length);
                     let tmp=bin[rand];
                     bin[rand]=bin[i];
                     bin[i]=tmp;
-                    let tmp0=bin1[rand];
+                    let tmph=bin1[rand];
                     bin1[rand]=bin1[i];
-                    bin1[i]=tmp0;
+                    bin1[i]=tmph;
                     let tmp1=dec[rand];
                     dec[rand]=dec[i];
                     dec[i]=tmp1;
@@ -49,53 +41,62 @@ function pad(val) {
                     dec1[i]=tmp2;
                 }
                 saraksts=[];
-                saraksts1=[];
+                sarakstsh=[];
                 for(let i=0;i<n*n/2;i++){
                     saraksts.push(bin[i]);
                     saraksts.push(dec[i]);
-                    saraksts1.push(bin1[i]);
-                    saraksts1.push(dec1[i]);
+                    sarakstsh.push(bin1[i]);
+                    sarakstsh.push(dec1[i]);
                 }
                 for(let i=0;i<saraksts.length;i++){
                     let rand=Math.floor(Math.random()*saraksts.length);
                     let tmp=saraksts[rand];
                     saraksts[rand]=saraksts[i];
                     saraksts[i]=tmp;
-                    let tmp0=saraksts1[rand];
-                    saraksts1[rand]=saraksts1[i];
-                    saraksts1[i]=tmp0;
+                    let tmph=sarakstsh[rand];
+                    sarakstsh[rand]=sarakstsh[i];
+                    sarakstsh[i]=tmph;
                 }
             }
-            function taisitLaukumu(){        
-               n=document.getElementById("skaitlis").value; 
+            function taisitLaukumu(){
+               n=document.getElementById("skaitlis").value;
                if(n==3 || n<=1 ){
                    alert("Ievadiet normālu skaitli");
                }else if (n != 3){
+               count=0;
+               beigt=0;
+               t=0;
                document.getElementById("divs1").innerHTML = '';
                sajukums();
                let jdivs=document.getElementById("divs1");
+               document.body.removeChild(jdivs);
+               let ldivs=document.createElement("div");
+               ldivs.setAttribute("id", "divs1");
                for (let i=0; i<n; i++){
-                   let d=document.createElement("div");
-                   document.getElementById("divs1").appendChild(d);
+                   let mdivs=document.createElement("div");
                    for (let j=0; j<n; j++){
-                       let buttons=document.createElement("button");
-                       buttons.setAttribute("class", "hidden");
-                       buttons.setAttribute("id", i*n+j);
-                       buttons.setAttribute("onclick", "mainit(this)");
-                       buttons.innerHTML=saraksts[i*n+j];
-                       d.appendChild(buttons);
+                       let button=document.createElement("button");
+                       button.setAttribute("class", "hidden");
+                       button.setAttribute("id", i*n+j);
+                       button.setAttribute("onclick", "mainit(this)");
+                       button.innerHTML=saraksts[i*n+j];
+                       mdivs.appendChild(button);
                    }
-                   jdivs.appendChild(d);
+                   ldivs.appendChild(mdivs);
                }
-               document.body.appendChild(jdivs);     
-            }
-            }
+               radis=document.createElement("p");
+               radis.setAttribute("id", "cik");
+               ldivs.appendChild(radis);
+               document.body.appendChild(ldivs);
+               atskaite=setInterval(setTime, 1000);
+            }}
+            
             function mainit(btn){
                 if (skaitit%2 == 0){
                     if (skaitit > 1&&klik == false){
                         document.getElementById(id1).className="hidden";
                         document.getElementById(id2).className="hidden";
-                    } 
+                    }
                     btn.className="visible";
                     id1=btn.id;
                     skaitit++;
@@ -105,10 +106,15 @@ function pad(val) {
                     btn.className="visible";
                     id2=btn.id;
                     skaitit++;
-                    if (Math.abs(saraksts1[id1])==Math.abs(saraksts1[id2])){
+                    if (Math.abs(sarakstsh[id1])==Math.abs(sarakstsh[id2])){
                         klik=true;
-                        document.getElementById(id1).className="visible";
-                        document.getElementById(id2).className="visible";
+                        beigt=beigt+2;
+                        if (beigt == n*n){
+                            clearInterval(atskaite);
+                            let u=document.getElementById("cik");
+                            u.innerHTML="Apsveicu! Jūsu laiks bija: "+totalSeconds+" sekundes";
+                        }
                     }
                 }
             }
+    

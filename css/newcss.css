@@ -7,11 +7,7 @@ and open the template in the editor.
     Created on : Jan 13, 2021, 1:16:56 PM
     Author     : muffi
 */
- body {
-    font: 20px Montserrat, sans-serif;
-    line-height: 1.8;
-    color: #f5f6f7;
-  }
+
   p {font-size: 16px;}
   .margin {margin-bottom: 45px;}
   .bg-1 { 
@@ -105,14 +101,16 @@ h2 {
     background-color: #1abc9c;
 }
 .visible {
-    width: 50px;
-    height: 50px;
+    width: 90px;
+    height: 90px;
     font-size: 13px;
+    vertical-align: middle;
     background-color: #474e5d;
 }
 .hidden {
-    width: 50px;
-    height: 50px;
+    width: 90px;
+    height: 90px;
     font-size: 0px;
+    vertical-align: middle;
     background-color: #474e5d;
 }
