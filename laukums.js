@@ -69,9 +69,9 @@ function setTime() {
             }
             function taisitLaukumu(){
                n=document.getElementById("skaitlis").value;  
-               if(n==3 || n<=1 ){
+               if(n==3 || n<=1 || n==5){
                    alert("Ievadiet normālu skaitli");
-               }else if (n != 3){
+               }else if (n != 3 || n != 5){
                sajukums();
                skaitit=0;
                beigt=0;
